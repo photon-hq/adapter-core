@@ -1,0 +1,57 @@
+{
+  "name": "@photon-ai/adapter-core",
+  "version": "0.1.0",
+  "description": "Shared building blocks for Spectrum client-side adapters.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/photon-hq/adapter-core.git"
+  },
+  "homepage": "https://photon.codes/spectrum",
+  "bugs": {
+    "url": "https://github.com/photon-hq/adapter-core/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "bun": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "check": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "peerDependencies": {
+    "spectrum-ts": ">=1.15.0",
+    "typescript": "^5 || ^6.0.0",
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
+    "@photon-ai/proto": "^0.2.4",
+    "@types/bun": "latest",
+    "spectrum-ts": "^1.18.0",
+    "tsdown": "^0.22.1",
+    "typescript": "^5.9.3",
+    "ultracite": "7.8.0",
+    "zod": "^4.4.3"
+  },
+  "license": "MIT"
+}
